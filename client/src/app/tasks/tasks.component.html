@@ -1,0 +1,10 @@
+<h1>Tasks</h1>
+<ul>
+@for (task of tasksService.tasks; track task.id) {
+  <li>{{ task.name }}</li>
+}
+</ul>
+
+New Task:
+<input type="text" [(ngModel)]="newTaskName">
+<button (click)="addTask()">Add Task</button>

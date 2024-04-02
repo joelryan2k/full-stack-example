@@ -18,14 +18,14 @@ export class TasksService {
     return firstValueFrom(this.http.post<void>('/api/tasks/', { name }).pipe(take(1)));
   }
 
-  async remove(id: number) { //This task deletes a task at a specific id
+  async remove(id: number) { 
     await firstValueFrom(this.http.delete<void>(`/api/tasks/${ id }`, ))
-    await this.tasks.pop(); //deletes the task completely
+    await this.getAll(); 
     
   }
 
 }
 
 /* 
-String interpolation to get the specific id 
+String interpolation to get the specific id
 */

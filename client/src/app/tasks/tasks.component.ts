@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TasksService } from '../services/tasks.service';
 import { FormsModule } from '@angular/forms';
-import { removeData } from 'jquery';
 
 @Component({
   selector: 'app-tasks',
@@ -15,8 +14,7 @@ export class TasksComponent implements OnInit {
 
   newTaskName = '';
 
-  ngOnInit(): void { //Not 100% sure what this function definition here is for. I believe that it has to do with the "OnInit" in the 
-    //class definition
+  ngOnInit(): void { 
     this.tasksService.getAll();
   }
 
@@ -26,7 +24,6 @@ export class TasksComponent implements OnInit {
   }
 
    deleteTask(id: number) { 
-    console.log("Function does something")
     this.tasksService.remove(id) 
   }
 

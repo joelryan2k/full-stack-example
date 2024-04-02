@@ -14,12 +14,18 @@ export class TasksComponent implements OnInit {
 
   newTaskName = '';
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this.tasksService.getAll();
   }
 
-  async addTask() {
+  async addTask() { 
     await this.tasksService.create(this.newTaskName);
     await this.tasksService.getAll();
   }
+
+   deleteTask(id: number) { 
+    this.tasksService.remove(id) 
+  }
+
 }
+
